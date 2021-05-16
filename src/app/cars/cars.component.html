@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-car-list></app-car-list>
+    </div>
+    
+    <div class="col-md-7">
+        <!-- <app-car-detail *ngIf="selectedCar; else infoText" [car]="selectedCar"></app-car-detail>
+        <ng-template #infoText>Please select a car</ng-template> -->
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+    <!-- 1st-row -->
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Car</button>
+    </div>
+</div>
+<hr>
+    <!-- 2nd row -->
+<div class="row">
+    <div class="col-xs-12">
+        <!-- passing the index -->
+        <app-car-item
+            *ngFor="let carEl of cars; let i = index" 
+            [car]="carEl"
+            [index]="i"></app-car-item>
+    </div>
+</div>
+

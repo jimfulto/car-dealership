@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- brand name -->
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">Car Catalog</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <!-- left-side-menu -->
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active" style="cursor: pointer;"><a routerLink="/cars">Cars</a></li>
+                <li routerLinkActive="active" style="cursor: pointer;"><a routerLink="/sample">Sample</a></li>
+            </ul>
+            <!-- right side menu -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- dropdown manage-->
+                <!-- commented routes because causing problem in dropdown -->
+                <li class="dropdown" appDropdown>
+                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a style="cursor: pointer;">Save Data</a></li>
+                        <li><a style="cursor: pointer;">Fetch Data</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
