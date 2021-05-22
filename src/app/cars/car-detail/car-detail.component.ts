@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Car } from '../car.model';
 import { CarService } from '../car.service';
 
@@ -13,7 +13,7 @@ export class CarDetailComponent implements OnInit {
   car!: Car;
   id!: number;
 
-  constructor(private carService: CarService, private route: ActivatedRoute) { }
+  constructor(private carService: CarService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     //2 ways to get the id, this is one
@@ -24,6 +24,10 @@ export class CarDetailComponent implements OnInit {
           this.car = this.carService.getCar(this.id);
         }
       );
+  }
+
+  onEditCar() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
 }

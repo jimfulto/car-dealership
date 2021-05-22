@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SampleComponent } from './sample/sample.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { CarStartComponent } from './cars/car-start/car-start.component';
+import { CarEditComponent } from './cars/car-edit/car-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CarStartComponent } from './cars/car-start/car-start.component';
     CarItemComponent,
     SampleComponent,
     DropdownDirective,
-    CarStartComponent
+    CarStartComponent,
+    CarEditComponent
   ],
   imports: [
     BrowserModule,
