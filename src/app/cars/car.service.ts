@@ -1,8 +1,8 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Car } from "./car.model";
 
+//injectable is used to inject one service into another but in our case we are not doing so can remove it
 export class CarService {
-    carSelected = new EventEmitter<Car>();
 
     private cars: Car[] = [
         new Car('BMW M3 GTR', 'Need for Speed Best Car', 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from './car.model';
 import { CarService } from './car.service';
 
 @Component({
@@ -9,18 +8,10 @@ import { CarService } from './car.service';
   providers: [CarService]
 })
 export class CarsComponent implements OnInit {
-
-  selectedCar!: Car;
   
-  constructor(private carService: CarService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.carService.carSelected
-      .subscribe(
-        (car: Car) => {
-          this.selectedCar = car;
-        }
-      );
   }
 
 }
