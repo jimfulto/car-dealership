@@ -8,7 +8,7 @@ import { CarsComponent } from './cars/cars.component';
 import { CarListComponent } from './cars/car-list/car-list.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
 import { CarItemComponent } from './cars/car-list/car-item/car-item.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SampleComponent } from './sample/sample.component';
 import { DropdownDirective } from './shared/dropdown.directive';
@@ -31,6 +31,7 @@ import { CarEditComponent } from './cars/car-edit/car-edit.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
   ],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CarService } from '../car.service';
 
 @Component({
@@ -13,7 +13,11 @@ export class CarEditComponent implements OnInit {
   editMode = false;
   carForm!: FormGroup;
 
-  constructor(private route: ActivatedRoute, private carService: CarService) { }
+  constructor(private route: ActivatedRoute, 
+              private carService: CarService,
+              private router: Router) { 
+
+  }
 
   ngOnInit(): void {
     this.route.params
@@ -24,6 +28,24 @@ export class CarEditComponent implements OnInit {
           this.initForm();
         }
       );
+  }
+
+  onSubmit() {
+    // const newCar = new Car(
+    //   this.carForm.value['name'], 
+    //   this.carForm.value['description'],
+    //   this.carForm.value['imagePath']
+    //   );
+    if(this.editMode) {
+      this.carService.updateCar(this.id, this.carForm.value);
+    } else {
+      this.carService.addCar(this.carForm.value);
+    }
+    this.onCancel();
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
   private initForm() {
@@ -39,9 +61,9 @@ export class CarEditComponent implements OnInit {
     }
 
     this.carForm  = new FormGroup({
-      'name': new FormControl(carName),
-      'imagePath': new FormControl(carImagePath),
-      'description': new FormControl(carDescription)
+      'name': new FormControl(carName, Validators.required),
+      'imagePath': new FormControl(carImagePath, Validators.required),
+      'description': new FormControl(carDescription, Validators.required)
     });
   }
 
