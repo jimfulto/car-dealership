@@ -14,6 +14,7 @@ import { SampleComponent } from './sample/sample.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { CarStartComponent } from './cars/car-start/car-start.component';
 import { CarEditComponent } from './cars/car-edit/car-edit.component';
+import { CarService } from './cars/car.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { CarEditComponent } from './cars/car-edit/car-edit.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

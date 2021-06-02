@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Car } from '../car.model';
 import { CarService } from '../car.service';
 
@@ -8,14 +9,15 @@ import { CarService } from '../car.service';
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.css']
 })
-export class CarListComponent implements OnInit {
+export class CarListComponent implements OnInit, OnDestroy {
 
   cars!: Car[];
+  subscription!: Subscription;
 
   constructor(private carService: CarService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.carService.carsChanged
+    this.subscription = this.carService.carsChanged
       .subscribe(
         (cars: Car[]) => {
           this.cars = cars;
@@ -26,6 +28,10 @@ export class CarListComponent implements OnInit {
 
   onNewCar() {
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

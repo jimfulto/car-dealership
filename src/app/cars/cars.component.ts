@@ -5,7 +5,7 @@ import { CarService } from './car.service';
   selector: 'app-cars',
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.css'],
-  providers: [CarService]
+  // providers: [CarService]
 })
 export class CarsComponent implements OnInit {
   
