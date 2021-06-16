@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
 import { CarDetailComponent } from './cars/car-detail/car-detail.component';
 import { CarEditComponent } from './cars/car-edit/car-edit.component';
 import { CarStartComponent } from './cars/car-start/car-start.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
     { path: ':id', component: CarDetailComponent, resolve: [CarsResolverService] },
     { path: ':id/edit', component: CarEditComponent, resolve: [CarsResolverService] }
   ] },
-  { path: 'sample', component: SampleComponent }
+  { path: 'sample', component: SampleComponent },
+  { path: 'auth', component: AuthComponent }
 ];
 
 @NgModule({

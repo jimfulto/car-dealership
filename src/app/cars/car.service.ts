@@ -7,6 +7,9 @@ export class CarService {
     carsChanged = new Subject<Car[]>();
     //initialize with empty array
     private cars: Car[] = [];
+    
+    //when data goes use below to load cars-dont remove all cars and save data ---load all cars then save data
+    //make sure the data is fetched before saving
     // private cars: Car[] = [
     //     new Car('BMW M3 GTR', 'Need for Speed Best Car', 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
     //     new Car('Mercedez Benz SLR McLaren', 'Easy to control', 'https://images.pexels.com/photos/2365572/pexels-photo-2365572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),

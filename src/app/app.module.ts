@@ -15,6 +15,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { CarStartComponent } from './cars/car-start/car-start.component';
 import { CarEditComponent } from './cars/car-edit/car-edit.component';
 import { CarService } from './cars/car.service';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CarService } from './cars/car.service';
     SampleComponent,
     DropdownDirective,
     CarStartComponent,
-    CarEditComponent
+    CarEditComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
